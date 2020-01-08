@@ -1,10 +1,11 @@
 package service
 
 import (
-	"giligili/serializer"
+	"mithril/serializer"
 	"mime"
 	"os"
 	"path/filepath"
+	"github.com/aliyun/aliyun-oss-go-sdk/oss"
 
 	"github.com/google/uuid"
 )
@@ -14,18 +15,18 @@ type UploadTokenService struct {
 	Filename string `form:"filename" json:"filename"`
 }
 
-// Post 创建token
-// func (service *UploadTokenService) Post() serializer.Response {
-// 	client, err := oss.New(os.Getenv("OSS_END_POINT"), os.Getenv("OSS_ACCESS_KEY_ID"), os.Getenv("OSS_ACCESS_KEY_SECRET"))
-// 	if err != nil {
-// 		return serializer.Response{
-// 			Code: 50002,
-// 			Msg:    "OSS配置错误",
-// 			Error:  err.Error(),
-// 		}
-// 	}
+//Post 创建token
+func (service *UploadTokenService) Post() serializer.Response {
+	client, err := oss.New(os.Getenv("OSS_END_POINT"), os.Getenv("OSS_ACCESS_KEY_ID"), os.Getenv("OSS_ACCESS_KEY_SECRET"))
+	if err != nil {
+		return serializer.Response{
+			Code: 50002,
+			Msg:    "OSS配置错误",
+			Error:  err.Error(),
+		}
+	}
 
-	// 获取存储空间。
+	//获取存储空间。
 	bucket, err := client.Bucket(os.Getenv("OSS_BUCKET"))
 	if err != nil {
 		return serializer.Response{
