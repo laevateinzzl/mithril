@@ -1,8 +1,9 @@
 package api
 
 import (
-	"github.com/gin-gonic/gin"
 	"mithril/service"
+
+	"github.com/gin-gonic/gin"
 )
 
 // DailyRank 每日排行
