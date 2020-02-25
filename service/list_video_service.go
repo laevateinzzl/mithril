@@ -22,17 +22,17 @@ func (service *ListVideoService) List() serializer.Response {
 
 	if err := model.DB.Model(model.Video{}).Count(&total).Error; err != nil {
 		return serializer.Response{
-			Code: 50000,
-			Msg:    "数据库连接错误",
-			Error:  err.Error(),
+			Code:  50000,
+			Msg:   "数据库连接错误",
+			Error: err.Error(),
 		}
 	}
 
 	if err := model.DB.Limit(service.Limit).Offset(service.Start).Find(&videos).Error; err != nil {
 		return serializer.Response{
-			Code: 50000,
-			Msg:    "数据库连接错误",
-			Error:  err.Error(),
+			Code:  50000,
+			Msg:   "数据库连接错误",
+			Error: err.Error(),
 		}
 	}
 

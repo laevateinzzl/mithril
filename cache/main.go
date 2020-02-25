@@ -1,8 +1,8 @@
 package cache
 
 import (
-	"os"
 	"mithril/util"
+	"os"
 	"strconv"
 
 	"github.com/go-redis/redis"

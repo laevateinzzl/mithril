@@ -3,12 +3,12 @@ package api
 import (
 	"encoding/json"
 	"fmt"
+	jwt "github.com/appleboy/gin-jwt/v2"
+	"github.com/gin-gonic/gin"
+	validator "gopkg.in/go-playground/validator.v8"
 	"mithril/conf"
 	"mithril/model"
 	"mithril/serializer"
-
-	"github.com/gin-gonic/gin"
-	validator "gopkg.in/go-playground/validator.v8"
 )
 
 // Ping 状态检查页面
@@ -21,12 +21,20 @@ func Ping(c *gin.Context) {
 
 // CurrentUser 获取当前用户
 func CurrentUser(c *gin.Context) *model.User {
-	if user, _ := c.Get("user"); user != nil {
+	if user, _ := c.Get("account"); user != nil {
 		if u, ok := user.(*model.User); ok {
 			return u
 		}
 	}
 	return nil
+}
+func GetUserInfo(c *gin.Context) *model.User{
+	claims := jwt.ExtractClaims(c)
+	Account := claims["Account"].(string)
+	user:=model.GetUserInfo(Account)
+	return user
+
+
 }
 
 // ErrorResponse 返回错误消息

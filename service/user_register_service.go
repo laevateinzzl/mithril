@@ -7,8 +7,8 @@ import (
 
 // UserRegisterService 管理用户注册服务
 type UserRegisterService struct {
-	Nickname        string `form:"nickname" json:"nickname" binding:"required,min=2,max=30"`
-	UserName        string `form:"user_name" json:"user_name" binding:"required,min=5,max=30"`
+	Account         string `form:"account" json:"account" binding:"required,min=5,max=30"`
+	Username        string `form:"username" json:"username" binding:"required,min=2,max=30"`
 	Password        string `form:"password" json:"password" binding:"required,min=8,max=40"`
 	PasswordConfirm string `form:"password_confirm" json:"password_confirm" binding:"required,min=8,max=40"`
 }
@@ -23,7 +23,7 @@ func (service *UserRegisterService) valid() *serializer.Response {
 	}
 
 	count := 0
-	model.DB.Model(&model.User{}).Where("nickname = ?", service.Nickname).Count(&count)
+	model.DB.Model(&model.User{}).Where("username = ?", service.Username).Count(&count)
 	if count > 0 {
 		return &serializer.Response{
 			Code: 40001,
@@ -32,11 +32,11 @@ func (service *UserRegisterService) valid() *serializer.Response {
 	}
 
 	count = 0
-	model.DB.Model(&model.User{}).Where("user_name = ?", service.UserName).Count(&count)
+	model.DB.Model(&model.User{}).Where("account = ?", service.Account).Count(&count)
 	if count > 0 {
 		return &serializer.Response{
 			Code: 40001,
-			Msg:  "用户名已经注册",
+			Msg:  "账号已经注册",
 		}
 	}
 
@@ -46,8 +46,8 @@ func (service *UserRegisterService) valid() *serializer.Response {
 // Register 用户注册
 func (service *UserRegisterService) Register() serializer.Response {
 	user := model.User{
-		Nickname: service.Nickname,
-		UserName: service.UserName,
+		Account:  service.Account,
+		Username: service.Username,
 		Status:   model.Active,
 	}
 

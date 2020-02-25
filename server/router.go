@@ -16,31 +16,34 @@ func NewRouter() *gin.Engine {
 	r.Use(middleware.Session(os.Getenv("SESSION_SECRET")))
 	r.Use(middleware.Cors())
 	r.Use(middleware.CurrentUser())
-
+	var authMiddleware = middleware.GinJWTMiddlewareInit(middleware.AllUserAuthorizator)
 	// 路由
 	v1 := r.Group("/api/v1")
 	{
 		v1.POST("ping", api.Ping)
 
-		// 用户登录
+		// 用户注册
 		v1.POST("user/register", api.UserRegister)
 
 		// 用户登录
-		v1.POST("user/login", api.UserLogin)
+		v1.POST("user/login", authMiddleware.LoginHandler)
 
 		// 需要登录保护的
 		auth := v1.Group("")
-		auth.Use(middleware.AuthRequired())
+
+		auth.Use(authMiddleware.MiddlewareFunc())
 		{
 			// User Routing
+			auth.GET("/refresh_token", authMiddleware.RefreshHandler)
+
 			auth.GET("user/me", api.UserMe)
-			auth.DELETE("user/logout", api.UserLogout)
+
+			auth.PUT("video/:id", api.UpdateVideo)
+			auth.DELETE("video/:id", api.DeleteVideo)
+			auth.POST("videos", api.CreateVideo)
 		}
-		v1.POST("videos", api.CreateVideo)
 		v1.GET("video/:id", api.ShowVideo)
 		v1.GET("videos", api.ListVideo)
-		v1.PUT("video/:id", api.UpdateVideo)
-		v1.DELETE("video/:id", api.DeleteVideo)
 		// 排行榜
 		v1.GET("rank/daily", api.DailyRank)
 		// 其他
