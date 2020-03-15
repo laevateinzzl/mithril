@@ -25,7 +25,7 @@ type Claims struct {
 }
 
 type UserCheck struct {
-	UserName   string
+	Account   string
 	UserClaims []Claims
 }
 

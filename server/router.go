@@ -49,5 +49,10 @@ func NewRouter() *gin.Engine {
 		// 其他
 		v1.POST("upload/token", api.UploadToken)
 	}
+	auth := r.Group("/auth")
+	{
+		// Refresh time can be longer than token timeout
+		auth.GET("/refresh_token", authMiddleware.RefreshHandler)
+	}
 	return r
 }

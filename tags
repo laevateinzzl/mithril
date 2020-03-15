@@ -1,0 +1,219 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/951ddd7f/
+0	.vscode/launch.json	/^        {$/;"	o	array:configurations
+1YIDfwQixPWYvMPCmagXxfpksPv	.idea/workspace.xml	/^  <component name="ProjectId" id="1YIDfwQixPWYvMPCmagXxfpksPv" \/>$/;"	i
+Account	model/user.go	/^	Account        string$/;"	m	struct:model.User	typeref:typename:string
+Account	serializer/user.go	/^	Account   string `json:"account"`$/;"	m	struct:serializer.User	typeref:typename:string
+Account	service/user_login_service.go	/^	Account  string `form:"account" json:"account" binding:"required,min=5,max=30"`$/;"	m	struct:service.UserLoginService	typeref:typename:string
+Account	service/user_register_service.go	/^	Account         string `form:"account" json:"account" binding:"required,min=5,max=30"`$/;"	m	struct:service.UserRegisterService	typeref:typename:string
+Active	model/user.go	/^	Active string = "active"$/;"	c	package:model	typeref:typename:string
+AddView	model/video.go	/^func (video *Video) AddView() {$/;"	f	struct:model.Video
+AllUserAuthorizator	middleware/myjwt.go	/^func AllUserAuthorizator(data interface{}, c *gin.Context) bool {$/;"	f	package:middleware	typeref:typename:bool
+AuthID	model/user.go	/^	AuthID int    `json:"user_id"`$/;"	m	struct:model.Claims	typeref:typename:int
+AuthRequired	middleware/auth.go	/^func AuthRequired() gin.HandlerFunc {$/;"	f	package:middleware	typeref:typename:gin.HandlerFunc
+Avatar	model/user.go	/^	Avatar         string `gorm:"size:1000"`$/;"	m	struct:model.User	typeref:typename:string
+Avatar	model/video.go	/^	Avatar string$/;"	m	struct:model.Video	typeref:typename:string
+Avatar	serializer/user.go	/^	Avatar    string `json:"avatar"`$/;"	m	struct:serializer.User	typeref:typename:string
+Avatar	serializer/video.go	/^	Avatar    string `json:"avatar"`$/;"	m	struct:serializer.Video	typeref:typename:string
+Avatar	service/creat_video_service.go	/^	Avatar string `form:"avatar" json:"avatar"`$/;"	m	struct:service.CreateVideoService	typeref:typename:string
+AvatarURL	model/user.go	/^func (user *User) AvatarURL() string {$/;"	f	struct:model.User	typeref:typename:string
+AvatarURL	model/video.go	/^func (video *Video) AvatarURL() string {$/;"	f	struct:model.Video	typeref:typename:string
+BuildListResponse	serializer/common.go	/^func BuildListResponse(items interface{}, total uint) Response {$/;"	f	package:serializer	typeref:typename:Response
+BuildLogger	util/logger.go	/^func BuildLogger(level string) {$/;"	f	package:util
+BuildUser	serializer/user.go	/^func BuildUser(user model.User) User {$/;"	f	package:serializer	typeref:typename:User
+BuildUserResponse	serializer/user.go	/^func BuildUserResponse(user model.User) Response {$/;"	f	package:serializer	typeref:typename:Response
+BuildVideo	serializer/video.go	/^func BuildVideo(item model.Video) Video {$/;"	f	package:serializer	typeref:typename:Video
+BuildVideos	serializer/video.go	/^func BuildVideos(items []model.Video) (videos []Video) {$/;"	f	package:serializer	typeref:typename:(videos []Video)
+CheckAuth	model/user.go	/^func CheckAuth(account, password string) bool {$/;"	f	package:model	typeref:typename:bool
+CheckLogin	serializer/common.go	/^func CheckLogin() Response {$/;"	f	package:serializer	typeref:typename:Response
+CheckPassword	model/user.go	/^func (user *User) CheckPassword(password string) bool {$/;"	f	struct:model.User	typeref:typename:bool
+Claims	model/user.go	/^type Claims struct {$/;"	s	package:model
+Code	serializer/common.go	/^	Code  int         `json:"code"`$/;"	m	struct:serializer.Response	typeref:typename:int
+CodeCheckLogin	serializer/common.go	/^	CodeCheckLogin = 401$/;"	c	package:serializer
+CodeDBError	serializer/common.go	/^	CodeDBError = 50001$/;"	c	package:serializer
+CodeEncryptError	serializer/common.go	/^	CodeEncryptError = 50002$/;"	c	package:serializer
+CodeNoRightErr	serializer/common.go	/^	CodeNoRightErr = 403$/;"	c	package:serializer
+CodeParamErr	serializer/common.go	/^	CodeParamErr = 40001$/;"	c	package:serializer
+Cors	middleware/cors.go	/^func Cors() gin.HandlerFunc {$/;"	f	package:middleware	typeref:typename:gin.HandlerFunc
+Create	service/creat_video_service.go	/^func (service *CreateVideoService) Create() serializer.Response {$/;"	f	struct:service.CreateVideoService	typeref:typename:serializer.Response
+CreateVideo	api/video.go	/^func CreateVideo(c *gin.Context) {$/;"	f	package:api
+CreateVideoService	service/creat_video_service.go	/^type CreateVideoService struct {$/;"	s	package:service
+CreatedAt	serializer/user.go	/^	CreatedAt int64  `json:"created_at"`$/;"	m	struct:serializer.User	typeref:typename:int64
+CreatedAt	serializer/video.go	/^	CreatedAt int64  `json:"created_at"`$/;"	m	struct:serializer.Video	typeref:typename:int64
+CurrentUser	api/main.go	/^func CurrentUser(c *gin.Context) *model.User {$/;"	f	package:api	typeref:typename:*model.User
+CurrentUser	middleware/auth.go	/^func CurrentUser() gin.HandlerFunc {$/;"	f	package:middleware	typeref:typename:gin.HandlerFunc
+DB	model/init.go	/^var DB *gorm.DB$/;"	v	package:model	typeref:typename:*gorm.DB
+DBErr	serializer/common.go	/^func DBErr(msg string, err error) Response {$/;"	f	package:serializer	typeref:typename:Response
+DailyRank	api/rank.go	/^func DailyRank(c *gin.Context) {$/;"	f	package:api
+DailyRankKey	cache/keys.go	/^	DailyRankKey = "rank:daily"$/;"	c	package:cache
+DailyRankService	service/daily_rank_service.go	/^type DailyRankService struct {$/;"	s	package:service
+Data	serializer/common.go	/^	Data  interface{} `json:"data,omitempty"`$/;"	m	struct:serializer.Response	typeref:typename:interface{}
+DataList	serializer/common.go	/^type DataList struct {$/;"	s	package:serializer
+Database	model/init.go	/^func Database(connString string) {$/;"	f	package:model
+Debug	util/logger.go	/^func (ll *Logger) Debug(format string, v ...interface{}) {$/;"	f	struct:util.Logger
+Delete	service/delete_video_service.go	/^func (service *DeleteVideoService) Delete(id string) serializer.Response {$/;"	f	struct:service.DeleteVideoService	typeref:typename:serializer.Response
+DeleteVideo	api/video.go	/^func DeleteVideo(c *gin.Context) {$/;"	f	package:api
+DeleteVideoService	service/delete_video_service.go	/^type DeleteVideoService struct {$/;"	s	package:service
+Dictinary	conf/i18n.go	/^var Dictinary *map[interface{}]interface{}$/;"	v	package:conf	typeref:typename:*map[interface{}]interface{}
+Err	serializer/common.go	/^func Err(errCode int, msg string, err error) Response {$/;"	f	package:serializer	typeref:typename:Response
+Error	serializer/common.go	/^	Error string      `json:"error,omitempty"`$/;"	m	struct:serializer.Response	typeref:typename:string
+Error	util/logger.go	/^func (ll *Logger) Error(format string, v ...interface{}) {$/;"	f	struct:util.Logger
+ErrorResponse	api/main.go	/^func ErrorResponse(err error) serializer.Response {$/;"	f	package:api	typeref:typename:serializer.Response
+Filename	service/upload_video_service.go	/^	Filename string `form:"filename" json:"filename"`$/;"	m	struct:service.UploadTokenService	typeref:typename:string
+Get	service/daily_rank_service.go	/^func (service *DailyRankService) Get() serializer.Response {$/;"	f	struct:service.DailyRankService	typeref:typename:serializer.Response
+GetUser	model/user.go	/^func GetUser(ID interface{}) (User, error) {$/;"	f	package:model	typeref:typename:(User, error)
+GetUserClaims	model/user.go	/^func GetUserClaims(Account string) (claims []Claims) {$/;"	f	package:model	typeref:typename:(claims []Claims)
+GetUserInfo	api/main.go	/^func GetUserInfo(c *gin.Context) *model.User{$/;"	f	package:api	typeref:typename:*model.User
+GetUserInfo	model/user.go	/^func GetUserInfo(account string) (user *User) {$/;"	f	package:model	typeref:typename:(user *User)
+GinJWTMiddlewareInit	middleware/myjwt.go	/^func GinJWTMiddlewareInit(jwtAuthorizator JwtAuthorizator) (authMiddleware *jwt.GinJWTMiddleware/;"	f	package:middleware	typeref:typename:(authMiddleware *jwt.GinJWTMiddleware)
+ID	model/user.go	/^	ID     int    `gorm:"primary_key" json:"claim_id"`$/;"	m	struct:model.Claims	typeref:typename:int
+ID	serializer/user.go	/^	ID        uint   `json:"id"`$/;"	m	struct:serializer.User	typeref:typename:uint
+ID	serializer/video.go	/^	ID        uint   `json:"id"`$/;"	m	struct:serializer.Video	typeref:typename:uint
+Info	model/video.go	/^	Info   string$/;"	m	struct:model.Video	typeref:typename:string
+Info	serializer/video.go	/^	Info      string `json:"info"`$/;"	m	struct:serializer.Video	typeref:typename:string
+Info	service/creat_video_service.go	/^	Info   string `form:"info" json:"info" binding:"max=3000"`$/;"	m	struct:service.CreateVideoService	typeref:typename:string
+Info	service/update_video_service.go	/^	Info  string `form:"info" json:"info" binding:"max=300"`$/;"	m	struct:service.UpdateVideoService	typeref:typename:string
+Info	util/logger.go	/^func (ll *Logger) Info(format string, v ...interface{}) {$/;"	f	struct:util.Logger
+Init	conf/conf.go	/^func Init() {$/;"	f	package:conf
+Items	serializer/common.go	/^	Items interface{} `json:"items"`$/;"	m	struct:serializer.DataList	typeref:typename:interface{}
+JwtAuthorizator	middleware/myjwt.go	/^type JwtAuthorizator func(data interface{}, c *gin.Context) bool$/;"	t	package:middleware	typeref:typename:func(data interface{}, c *gin.Context) bool
+LevelDebug	util/logger.go	/^	LevelDebug$/;"	c	package:util
+LevelError	util/logger.go	/^	LevelError = iota$/;"	c	package:util
+LevelInformational	util/logger.go	/^	LevelInformational$/;"	c	package:util
+LevelWarning	util/logger.go	/^	LevelWarning$/;"	c	package:util
+Limit	service/list_video_service.go	/^	Limit int `form:"limit"`$/;"	m	struct:service.ListVideoService	typeref:typename:int
+List	service/list_video_service.go	/^func (service *ListVideoService) List() serializer.Response {$/;"	f	struct:service.ListVideoService	typeref:typename:serializer.Response
+ListVideo	api/video.go	/^func ListVideo(c *gin.Context) {$/;"	f	package:api
+ListVideoService	service/list_video_service.go	/^type ListVideoService struct {$/;"	s	package:service
+LoadLocales	conf/i18n.go	/^func LoadLocales(path string) error {$/;"	f	package:conf	typeref:typename:error
+Log	util/logger.go	/^func Log() *Logger {$/;"	f	package:util	typeref:typename:*Logger
+Logger	util/logger.go	/^type Logger struct {$/;"	s	package:util
+Login	service/user_login_service.go	/^func (service *UserLoginService) Login(c *gin.Context) bool {$/;"	f	struct:service.UserLoginService	typeref:typename:bool
+Model	model/user.go	/^	gorm.Model$/;"	M	struct:model.User	typeref:typename:gorm.Model
+Model	model/video.go	/^	gorm.Model$/;"	M	struct:model.Video	typeref:typename:gorm.Model
+Msg	serializer/common.go	/^	Msg   string      `json:"msg"`$/;"	m	struct:serializer.Response	typeref:typename:string
+NewRouter	server/router.go	/^func NewRouter() *gin.Engine {$/;"	f	package:server	typeref:typename:*gin.Engine
+Panic	util/logger.go	/^func (ll *Logger) Panic(format string, v ...interface{}) {$/;"	f	struct:util.Logger
+ParamErr	serializer/common.go	/^func ParamErr(msg string, err error) Response {$/;"	f	package:serializer	typeref:typename:Response
+PassWordCost	model/user.go	/^	PassWordCost = 12$/;"	c	package:model
+Password	service/user_login_service.go	/^	Password string `form:"password" json:"password" binding:"required,min=8,max=40"`$/;"	m	struct:service.UserLoginService	typeref:typename:string
+Password	service/user_register_service.go	/^	Password        string `form:"password" json:"password" binding:"required,min=8,max=40"`$/;"	m	struct:service.UserRegisterService	typeref:typename:string
+PasswordConfirm	service/user_register_service.go	/^	PasswordConfirm string `form:"password_confirm" json:"password_confirm" binding:"required,min=8/;"	m	struct:service.UserRegisterService	typeref:typename:string
+PasswordDigest	model/user.go	/^	PasswordDigest string$/;"	m	struct:model.User	typeref:typename:string
+Ping	api/main.go	/^func Ping(c *gin.Context) {$/;"	f	package:api
+Post	service/upload_video_service.go	/^func (service *UploadTokenService) Post() serializer.Response {$/;"	f	struct:service.UploadTokenService	typeref:typename:serializer.Response
+Println	util/logger.go	/^func (ll *Logger) Println(msg string) {$/;"	f	struct:util.Logger
+RandStringRunes	util/common.go	/^func RandStringRunes(n int) string {$/;"	f	package:util	typeref:typename:string
+Redis	cache/main.go	/^func Redis() {$/;"	f	package:cache
+RedisClient	cache/main.go	/^var RedisClient *redis.Client$/;"	v	package:cache	typeref:typename:*redis.Client
+Register	service/user_register_service.go	/^func (service *UserRegisterService) Register() serializer.Response {$/;"	f	struct:service.UserRegisterService	typeref:typename:serializer.Response
+Response	serializer/common.go	/^	Response$/;"	M	struct:serializer.TrackedErrorResponse	typeref:typename:Response
+Response	serializer/common.go	/^type Response struct {$/;"	s	package:serializer
+Session	middleware/session.go	/^func Session(secret string) gin.HandlerFunc {$/;"	f	package:middleware	typeref:typename:gin.HandlerFunc
+SetPassword	model/user.go	/^func (user *User) SetPassword(password string) error {$/;"	f	struct:model.User	typeref:typename:error
+Show	service/show_video_service.go	/^func (service *ShowVideoService) Show(id string) serializer.Response {$/;"	f	struct:service.ShowVideoService	typeref:typename:serializer.Response
+ShowVideo	api/video.go	/^func ShowVideo(c *gin.Context) {$/;"	f	package:api
+ShowVideoService	service/show_video_service.go	/^type ShowVideoService struct {$/;"	s	package:service
+Start	service/list_video_service.go	/^	Start int `form:"start"`$/;"	m	struct:service.ListVideoService	typeref:typename:int
+Status	model/user.go	/^	Status         string$/;"	m	struct:model.User	typeref:typename:string
+Status	serializer/user.go	/^	Status    string `json:"status"`$/;"	m	struct:serializer.User	typeref:typename:string
+T	conf/i18n.go	/^func T(key string) string {$/;"	f	package:conf	typeref:typename:string
+Title	model/video.go	/^	Title  string$/;"	m	struct:model.Video	typeref:typename:string
+Title	serializer/video.go	/^	Title     string `json:"title"`$/;"	m	struct:serializer.Video	typeref:typename:string
+Title	service/creat_video_service.go	/^	Title  string `form:"title" json:"title" binding:"required,min=2,max=100"`$/;"	m	struct:service.CreateVideoService	typeref:typename:string
+Title	service/update_video_service.go	/^	Title string `form:"title" json:"title" binding:"required,min=2,max=30"`$/;"	m	struct:service.UpdateVideoService	typeref:typename:string
+Total	serializer/common.go	/^	Total uint        `json:"total"`$/;"	m	struct:serializer.DataList	typeref:typename:uint
+TrackID	serializer/common.go	/^	TrackID string `json:"track_id"`$/;"	m	struct:serializer.TrackedErrorResponse	typeref:typename:string
+TrackedErrorResponse	serializer/common.go	/^type TrackedErrorResponse struct {$/;"	s	package:serializer
+Type	model/user.go	/^	Type   string `json:"type"`$/;"	m	struct:model.Claims	typeref:typename:string
+URL	model/video.go	/^	URL    string$/;"	m	struct:model.Video	typeref:typename:string
+URL	serializer/video.go	/^	URL       string `json:"url"`$/;"	m	struct:serializer.Video	typeref:typename:string
+URL	service/creat_video_service.go	/^	URL    string `form:"url" json:"url"`$/;"	m	struct:service.CreateVideoService	typeref:typename:string
+Update	service/update_video_service.go	/^func (service *UpdateVideoService) Update(id string) serializer.Response {$/;"	f	struct:service.UpdateVideoService	typeref:typename:serializer.Response
+UpdateVideo	api/video.go	/^func UpdateVideo(c *gin.Context) {$/;"	f	package:api
+UpdateVideoService	service/update_video_service.go	/^type UpdateVideoService struct {$/;"	s	package:service
+UploadToken	api/upload.go	/^func UploadToken(c *gin.Context) {$/;"	f	package:api
+UploadTokenService	service/upload_video_service.go	/^type UploadTokenService struct {$/;"	s	package:service
+User	model/user.go	/^type User struct {$/;"	s	package:model
+User	serializer/user.go	/^type User struct {$/;"	s	package:serializer
+UserCheck	model/user.go	/^type UserCheck struct {$/;"	s	package:model
+UserClaims	model/user.go	/^	UserClaims []Claims$/;"	m	struct:model.UserCheck	typeref:typename:[]Claims
+UserLogin	api/user..go	/^func UserLogin(c *gin.Context) {$/;"	f	package:api
+UserLoginService	service/user_login_service.go	/^type UserLoginService struct {$/;"	s	package:service
+UserMe	api/user..go	/^func UserMe(c *gin.Context) {$/;"	f	package:api
+UserName	model/user.go	/^	UserName   string$/;"	m	struct:model.UserCheck	typeref:typename:string
+UserRegister	api/user..go	/^func UserRegister(c *gin.Context) {$/;"	f	package:api
+UserRegisterService	service/user_register_service.go	/^type UserRegisterService struct {$/;"	s	package:service
+Username	model/user.go	/^	Username       string$/;"	m	struct:model.User	typeref:typename:string
+Username	serializer/user.go	/^	Username  string `json:"username"`$/;"	m	struct:serializer.User	typeref:typename:string
+Username	service/user_register_service.go	/^	Username        string `form:"username" json:"username" binding:"required,min=2,max=30"`$/;"	m	struct:service.UserRegisterService	typeref:typename:string
+Value	model/user.go	/^	Value  string `json:"value"`$/;"	m	struct:model.Claims	typeref:typename:string
+Video	model/video.go	/^type Video struct {$/;"	s	package:model
+Video	serializer/video.go	/^type Video struct {$/;"	s	package:serializer
+VideoURL	model/video.go	/^func (video *Video) VideoURL() string {$/;"	f	struct:model.Video	typeref:typename:string
+VideoViewKey	cache/keys.go	/^func VideoViewKey(id uint) string {$/;"	f	package:cache	typeref:typename:string
+View	model/video.go	/^func (video *Video) View() uint64 {$/;"	f	struct:model.Video	typeref:typename:uint64
+View	serializer/video.go	/^	View      uint64 `json:"view"`$/;"	m	struct:serializer.Video	typeref:typename:uint64
+Warning	util/logger.go	/^func (ll *Logger) Warning(format string, v ...interface{}) {$/;"	f	struct:util.Logger
+api	api/main.go	/^package api$/;"	p
+api	api/rank.go	/^package api$/;"	p
+api	api/upload.go	/^package api$/;"	p
+api	api/user..go	/^package api$/;"	p
+api	api/video.go	/^package api$/;"	p
+args	.vscode/launch.json	/^            "args": []$/;"	a	object:configurations.0
+bb78ca40-ab24-481d-94b9-a87833019f4d	.idea/workspace.xml	/^    <list default="true" id="bb78ca40-ab24-481d-94b9-a87833019f4d" name="Default Changelist" com/;"	i
+cache	cache/keys.go	/^package cache$/;"	p
+cache	cache/main.go	/^package cache$/;"	p
+conf	conf/conf.go	/^package conf$/;"	p
+conf	conf/i18n.go	/^package conf$/;"	p
+configurations	.vscode/launch.json	/^    "configurations": [$/;"	a
+env	.vscode/launch.json	/^            "env": {},$/;"	o	object:configurations.0
+go.inferGopath	.vscode/settings.json	/^    "go.inferGopath": false$/;"	b
+identityKey	middleware/myjwt.go	/^var identityKey = "account"$/;"	v	package:middleware
+jwt	api/main.go	/^	jwt "github.com\/appleboy\/gin-jwt\/v2"$/;"	P	package:github.com/appleboy/gin-jwt/v2
+jwt	middleware/myjwt.go	/^	jwt "github.com\/appleboy\/gin-jwt\/v2"$/;"	P	package:github.com/appleboy/gin-jwt/v2
+level	util/logger.go	/^	level int$/;"	m	struct:util.Logger	typeref:typename:int
+logger	util/logger.go	/^var logger *Logger$/;"	v	package:util	typeref:typename:*Logger
+main	main.go	/^func main() {$/;"	f	package:main
+main	main.go	/^package main$/;"	p
+middleware	middleware/auth.go	/^package middleware$/;"	p
+middleware	middleware/cors.go	/^package middleware$/;"	p
+middleware	middleware/myjwt.go	/^package middleware$/;"	p
+middleware	middleware/session.go	/^package middleware$/;"	p
+migration	model/migration.go	/^func migration() {$/;"	f	package:model
+mithril	README.md	/^# mithril$/;"	c
+mode	.vscode/launch.json	/^            "mode": "auto",$/;"	s	object:configurations.0
+model	model/init.go	/^package model$/;"	p
+model	model/migration.go	/^package model$/;"	p
+model	model/user.go	/^package model$/;"	p
+model	model/video.go	/^package model$/;"	p
+name	.vscode/launch.json	/^            "name": "Launch",$/;"	s	object:configurations.0
+program	.vscode/launch.json	/^            "program": "${fileDirname}",$/;"	s	object:configurations.0
+request	.vscode/launch.json	/^            "request": "launch",$/;"	s	object:configurations.0
+serializer	serializer/common.go	/^package serializer$/;"	p
+serializer	serializer/user.go	/^package serializer$/;"	p
+serializer	serializer/video.go	/^package serializer$/;"	p
+server	server/router.go	/^package server$/;"	p
+service	service/creat_video_service.go	/^package service$/;"	p
+service	service/daily_rank_service.go	/^package service$/;"	p
+service	service/delete_video_service.go	/^package service$/;"	p
+service	service/list_video_service.go	/^package service$/;"	p
+service	service/show_video_service.go	/^package service$/;"	p
+service	service/update_video_service.go	/^package service$/;"	p
+service	service/upload_video_service.go	/^package service$/;"	p
+service	service/user_login_service.go	/^package service$/;"	p
+service	service/user_register_service.go	/^package service$/;"	p
+setSession	service/user_login_service.go	/^func (service *UserLoginService) setSession(c *gin.Context, user model.User) {$/;"	f	struct:service.UserLoginService
+type	.vscode/launch.json	/^            "type": "go",$/;"	s	object:configurations.0
+util	util/common.go	/^package util$/;"	p
+util	util/logger.go	/^package util$/;"	p
+valid	service/user_register_service.go	/^func (service *UserRegisterService) valid() *serializer.Response {$/;"	f	struct:service.UserRegisterService	typeref:typename:*serializer.Response
+validator	api/main.go	/^	validator "gopkg.in\/go-playground\/validator.v8"$/;"	P	package:gopkg.in/go-playground/validator.v8
+yaml	conf/i18n.go	/^	yaml "gopkg.in\/yaml.v2"$/;"	P	package:gopkg.in/yaml.v2
