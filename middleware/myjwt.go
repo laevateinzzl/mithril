@@ -14,14 +14,13 @@ import (
 
 var identityKey = os.Getenv("IdentityKey")
 
-
 type JwtAuthorizator func(data interface{}, c *gin.Context) bool
 
 func GinJWTMiddlewareInit(jwtAuthorizator JwtAuthorizator) (authMiddleware *jwt.GinJWTMiddleware) {
 	authMiddleware, err := jwt.New(&jwt.GinJWTMiddleware{
 		Realm:       "test zone",
 		Key:         []byte("secret key"),
-		Timeout:     time.Minute * 5,
+		Timeout:     time.Minute * 60,
 		MaxRefresh:  time.Hour,
 		IdentityKey: identityKey,
 		PayloadFunc: func(data interface{}) jwt.MapClaims {
@@ -31,7 +30,7 @@ func GinJWTMiddlewareInit(jwtAuthorizator JwtAuthorizator) (authMiddleware *jwt.
 				jsonClaim, _ := json.Marshal(v.UserClaims)
 				//maps the claims in the JWT
 				return jwt.MapClaims{
-					"Account":   v.Account,
+					"Account":    v.Account,
 					"userClaims": string(jsonClaim),
 				}
 			}
@@ -44,7 +43,7 @@ func GinJWTMiddlewareInit(jwtAuthorizator JwtAuthorizator) (authMiddleware *jwt.
 			var userClaims []model.Claims
 			_ = json.Unmarshal([]byte(jsonClaim), &userClaims)
 			return &model.UserCheck{
-				Account: claims["Account"].(string),
+				Account:    claims["Account"].(string),
 				UserClaims: userClaims,
 			}
 		},
@@ -66,7 +65,6 @@ func GinJWTMiddlewareInit(jwtAuthorizator JwtAuthorizator) (authMiddleware *jwt.
 		},
 		//receives identity and handles authorization logic
 		Authorizator: jwtAuthorizator,
-
 
 		//handles unauthorized logic
 		Unauthorized: func(c *gin.Context, code int, message string) {
@@ -103,4 +101,3 @@ func GinJWTMiddlewareInit(jwtAuthorizator JwtAuthorizator) (authMiddleware *jwt.
 func AllUserAuthorizator(data interface{}, c *gin.Context) bool {
 	return true
 }
-

@@ -3,7 +3,6 @@ module mithril
 go 1.13
 
 require (
-	github.com/766b/go-outliner v0.0.0-20180511142203-fc6edecdadd7 // indirect
 	github.com/aliyun/aliyun-oss-go-sdk v2.0.5+incompatible
 	github.com/appleboy/gin-jwt/v2 v2.6.3
 	github.com/baiyubin/aliyun-sts-go-sdk v0.0.0-20180326062324-cfa1a18b161f // indirect

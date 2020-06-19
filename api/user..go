@@ -1,6 +1,7 @@
 package api
 
 import (
+	//	"mithril/middleware"
 	"mithril/serializer"
 	"mithril/service"
 

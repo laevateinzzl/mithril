@@ -25,7 +25,7 @@ type Claims struct {
 }
 
 type UserCheck struct {
-	Account   string
+	Account    string
 	UserClaims []Claims
 }
 
@@ -90,8 +90,7 @@ func CheckAuth(account, password string) bool {
 
 	return true
 }
-func GetUserInfo(account string) (user *User) {
-	var auth User
-	DB.Select("Account").Where(User{Account: account}).First(&auth)
-	return &auth
+func GetUserInfo(account string) (user User) {
+	DB.Where("account = ?", account).First(&user)
+	return
 }

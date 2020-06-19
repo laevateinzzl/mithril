@@ -3,7 +3,7 @@ package server
 import (
 	"mithril/api"
 	"mithril/middleware"
-	"os"
+	//	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,9 +13,9 @@ func NewRouter() *gin.Engine {
 	r := gin.Default()
 
 	// 中间件, 顺序不能改
-	r.Use(middleware.Session(os.Getenv("SESSION_SECRET")))
+	//	r.Use(middleware.Session(os.Getenv("SESSION_SECRET")))
 	r.Use(middleware.Cors())
-	r.Use(middleware.CurrentUser())
+	//r.Use(middleware.CurrentUserntUser())
 	var authMiddleware = middleware.GinJWTMiddlewareInit(middleware.AllUserAuthorizator)
 	// 路由
 	v1 := r.Group("/api/v1")
@@ -48,11 +48,6 @@ func NewRouter() *gin.Engine {
 		v1.GET("rank/daily", api.DailyRank)
 		// 其他
 		v1.POST("upload/token", api.UploadToken)
-	}
-	auth := r.Group("/auth")
-	{
-		// Refresh time can be longer than token timeout
-		auth.GET("/refresh_token", authMiddleware.RefreshHandler)
 	}
 	return r
 }

@@ -14,7 +14,7 @@ func Cors() gin.HandlerFunc {
 	config.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Cookie"}
 	if gin.Mode() == gin.ReleaseMode {
 		// 生产环境需要配置跨域域名，否则403
-		config.AllowOrigins = []string{""}
+		config.AllowOrigins = []string{"http://localhost:8080", "http://www.mithrilvideos.club"}
 	} else {
 		// 测试环境下模糊匹配本地开头的请求
 		config.AllowOriginFunc = func(origin string) bool {
@@ -24,8 +24,7 @@ func Cors() gin.HandlerFunc {
 			if regexp.MustCompile(`^http://localhost\.0\.0\.1:\d+$`).MatchString(origin) {
 				return true
 			}
-
-			if regexp.MustCompile(`^http://localhost.8080/*`).MatchString(origin) {
+			if regexp.MustCompile(`^http://localhost:8080*`).MatchString(origin) {
 				return true
 			}
 
