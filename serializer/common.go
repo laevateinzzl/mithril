@@ -37,14 +37,6 @@ const (
 	CodeParamErr = 40001
 )
 
-// CheckLogin 检查登录
-func CheckLogin() Response {
-	return Response{
-		Code: CodeCheckLogin,
-		Msg:  "未登录",
-	}
-}
-
 // Err 通用错误处理
 func Err(errCode int, msg string, err error) Response {
 	res := Response{

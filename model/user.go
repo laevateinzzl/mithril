@@ -70,6 +70,7 @@ func (user *User) CheckPassword(password string) bool {
 	return err == nil
 }
 
+//获取登录所需信息
 func GetUserClaims(Account string) (claims []Claims) {
 	var user User
 	DB.Where("account = ?", Account).First(&user)
@@ -77,6 +78,7 @@ func GetUserClaims(Account string) (claims []Claims) {
 	return
 }
 
+//登录验证
 func CheckAuth(account, password string) bool {
 	var user User
 
@@ -90,6 +92,8 @@ func CheckAuth(account, password string) bool {
 
 	return true
 }
+
+//获取用户名
 func GetUserInfo(account string) (user User) {
 	DB.Where("account = ?", account).First(&user)
 	return
