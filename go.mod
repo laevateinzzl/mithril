@@ -16,6 +16,7 @@ require (
 	github.com/onsi/ginkgo v1.12.0 // indirect
 	github.com/onsi/gomega v1.9.0 // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
+	github.com/swaggo/swag v1.6.7 // indirect
 	golang.org/x/crypto v0.0.0-20191205180655-e7c4368fe9dd
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
 	gopkg.in/go-playground/validator.v8 v8.18.2
