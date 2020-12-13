@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package videosvc;
+
+service Videos {
+	rpc PostVideo (PostRequest) returns (PostResponse);
+	rpc ListVideo (ListRequest) returns(ListResponse);
+	rpc GetVideo  (GetVideoRequest) returns (GetResponse);
+}
+
+message PostRequest {
+	string title = 1;
+	string info = 2;
+	string url = 3;
+	string cover = 4;
+}
+
+message PostResponse {
+	uint64 id = 1;
+}
+
+message ListRequest {
+	uint32 page = 1;
+	uint32 page_size = 2;
+}
+
+message Video {
+	uint64 id =1;
+	string title = 2;
+	string info = 3;
+	string url = 4;
+	string cover = 5;
+	uint64 view_count=6;
+	uint64 create_at=7;
+}
+
+message ListResponse {
+	repeated Video list = 1;
+}
+
+message GetVideoRequest {
+	uint64 id = 1;
+}
+
+message GetResponse {
+	Video video = 1;
+}
